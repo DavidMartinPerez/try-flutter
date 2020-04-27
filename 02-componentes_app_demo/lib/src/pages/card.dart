@@ -12,18 +12,30 @@ class CardPage extends StatelessWidget {
         body: ListView(
           padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
           children: <Widget>[
-            _cardTipoA(),
-            SizedBox(
-              height: 10,
-            ),
-            _cardTipoB()
+            _cardWidget(),
+            SizedBox( height: 20),
+            _cardContainerBoxShadow(),
+            SizedBox( height: 20),
+            _cardWidget(),
+            SizedBox( height: 20),
+            _cardContainerBoxShadow(),
+            SizedBox( height: 20),
+            _cardWidget(),
+            SizedBox( height: 20),
+            _cardContainerBoxShadow(),
+            SizedBox( height: 20),
+            _cardWidget(),
+            SizedBox( height: 20),
+            _cardContainerBoxShadow(),
+            SizedBox( height: 20),
           ],
         ));
   }
 
-  Card _cardTipoA() {
+  Card _cardWidget() {
     return Card(
       elevation: 10,
+      shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(20) ),
       child: Column(
         children: <Widget>[
           ListTile(
@@ -51,8 +63,8 @@ class CardPage extends StatelessWidget {
     );
   }
 
-  Card _cardTipoB() {
-    return Card(
+  Widget _cardContainerBoxShadow() {
+    final card = Container(
       child: Column(
         children: <Widget>[
           FadeInImage(
@@ -69,6 +81,26 @@ class CardPage extends StatelessWidget {
             child: Text('Cargando una imagen desde URL con loading'))
         ],
       ),
+    );
+
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(30),
+        boxShadow: <BoxShadow> [
+          BoxShadow(
+            color: Colors.blue[200],
+            offset: Offset(5.0, 5.0),
+            spreadRadius: 4,
+            blurRadius: 10
+          )
+        ]
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30),
+        child: card
+      ),
+
     );
   }
 }

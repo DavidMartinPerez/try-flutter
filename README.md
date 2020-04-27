@@ -13,7 +13,7 @@
     - rootBundle: Leer archivos Json, Json methods, map, etc
     - Future, Future Builder
     - Routes, Navigator, onGenerateRoute
-    - Card, Icons
-    - Networkin
-     Iconos, Imágenes, Avatars, Loadings, InfiniteScroll, Pull to refresh, Cards, Sliders
+    - Card, Icons, shape, elevation, Boxshadow, offset, spreadRadius, blurRadius
+    - NetworkImage, AssetImage, FadeInImage
+     Avatars, Loadings, InfiniteScroll, Pull to refresh, Cards, Sliders
 
