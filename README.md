@@ -15,5 +15,7 @@
     - Routes, Navigator, onGenerateRoute
     - Card, Icons, shape, elevation, Boxshadow, offset, spreadRadius, blurRadius
     - NetworkImage, AssetImage, FadeInImage
-     Avatars, Loadings, InfiniteScroll, Pull to refresh, Cards, Sliders
+    - AlertDialog, showDialog, shape, RoundedRectangleBorder
+    - Avatars, CircleAvatar
+    Loadings, InfiniteScroll, Pull to refresh, Sliders
 
