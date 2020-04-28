@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:componentes_app_demo/src/providers/menu.dart';
 import 'package:componentes_app_demo/src/utils/icon_string.dart';
-import 'package:componentes_app_demo/src/pages/alert.dart';
+import 'package:componentes_app_demo/src/widget/avatar.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -10,6 +10,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text('Componentes'),
+          actions: <Widget>[
+            AvatarWidget()
+          ],
         ),
         body: _list());
   }

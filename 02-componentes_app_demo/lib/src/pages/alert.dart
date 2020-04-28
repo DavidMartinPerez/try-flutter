@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:componentes_app_demo/src/widget/avatar.dart';
+
 class AlertPage extends StatelessWidget {
   const AlertPage({Key key}) : super(key: key);
 
@@ -8,6 +10,9 @@ class AlertPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Alerts'),
+        actions: <Widget>[
+          AvatarWidget()
+        ],
       ),
       body: Center(
         child: RaisedButton(

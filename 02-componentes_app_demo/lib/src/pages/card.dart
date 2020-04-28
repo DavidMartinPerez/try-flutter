@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:componentes_app_demo/src/widget/avatar.dart';
+
 class CardPage extends StatelessWidget {
   const CardPage({Key key}) : super(key: key);
 
@@ -8,6 +10,9 @@ class CardPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text('Cards'),
+          actions: <Widget>[
+            AvatarWidget()
+          ],
         ),
         body: ListView(
           padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),

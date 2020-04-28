@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+import 'package:componentes_app_demo/src/widget/avatar.dart';
+
 class AnimatedContainerPage extends StatefulWidget {
   AnimatedContainerPage({Key key}) : super(key: key);
 
@@ -24,15 +26,7 @@ class _AnimatedContainerPageState extends State<AnimatedContainerPage> {
       appBar: AppBar(
         title: Text('Animated Container'),
         actions: <Widget>[
-          Container(
-            margin: EdgeInsets.only(right: 10),
-            child: CircleAvatar(
-              backgroundImage: NetworkImage(
-                'https://vignette.wikia.nocookie.net/animalcrossing/images/f/fc/Icono_Narciso_%28New_Horizons%29.png/revision/latest/top-crop/width/300/height/300?cb=20200321044240&path-prefix=es',
-              ),
-              backgroundColor: Colors.transparent,
-            ),
-          ),
+          AvatarWidget()
         ],
       ),
       body: Center(
