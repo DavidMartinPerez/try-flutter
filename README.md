@@ -16,6 +16,7 @@
     - Card, Icons, shape, elevation, Boxshadow, offset, spreadRadius, blurRadius
     - NetworkImage, AssetImage, FadeInImage
     - AlertDialog, showDialog, shape, RoundedRectangleBorder
-    - Avatars, CircleAvatar
+    - Avatars, CircleAvatar,
+    - AnimatedContainer, Random
     Loadings, InfiniteScroll, Pull to refresh, Sliders
 
