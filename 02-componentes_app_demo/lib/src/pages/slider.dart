@@ -11,6 +11,7 @@ class SliderPage extends StatefulWidget {
 
 class _SliderPageState extends State<SliderPage> {
   double _valorSlider = 400;
+  bool _bloquearCheck = false;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +25,9 @@ class _SliderPageState extends State<SliderPage> {
           child: Column(
             children: <Widget>[
               _crearSlider(),
+              _crearCheckbox(),
+              _crearSwitch(),
+              Divider(),
               Text('Tamaño: ${_valorSlider.round()}'),
               Expanded(child: _crearImagen()),
             ],
@@ -32,16 +36,60 @@ class _SliderPageState extends State<SliderPage> {
     );
   }
 
-  _crearSlider() {
+  Widget _crearSlider() {
     return Slider(
       activeColor: Colors.red[300],
       label: 'Tamaño de la imagen',
       value: _valorSlider,
       min: 100,
       max: 400,
-      onChanged: (valor) {
+      onChanged: _bloquearCheck ? null : (valor) {
         setState(() {
           _valorSlider = valor;
+        });
+      },
+    );
+  }
+
+  Widget _crearCheckbox() {
+    // return Checkbox(
+    //   activeColor: Colors.red[300],
+    //   value: _bloquearCheck,
+    //   onChanged: ( check ) {
+    //     setState(() {
+    //       _bloquearCheck = check;
+    //     });
+    //   },
+    // );
+    return CheckboxListTile(
+      title: Text('Bloquear slider'),
+      activeColor: Colors.red[300],
+      value: _bloquearCheck,
+      onChanged: ( check ) {
+        setState(() {
+          _bloquearCheck = check;
+        });
+      },
+    );
+  }
+
+  Widget _crearSwitch() {
+    // return Switch(
+    //   activeColor: Colors.red[300],
+    //   value: _bloquearCheck,
+    //   onChanged: ( check ) {
+    //     setState(() {
+    //       _bloquearCheck = check;
+    //     });
+    //   },
+    // );
+    return SwitchListTile(
+      title: Text('Bloquear slider'),
+      activeColor: Colors.red[300],
+      value: _bloquearCheck,
+      onChanged: ( check ) {
+        setState(() {
+          _bloquearCheck = check;
         });
       },
     );

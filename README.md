@@ -21,6 +21,6 @@
     - Inputs, TextField, InputDecoration, TextEditingController
     - Locale, GlobalMaterialLocalizations
     - Dropdown, DropdownMenuItem,
-    - Sliders, checkbox, radiobutton
+    - Sliders, Checkbox, CheckboxListTile, Switch, SwitchListTile
     Loadings, InfiniteScroll, Pull to refresh
 
