@@ -18,5 +18,7 @@
     - AlertDialog, showDialog, shape, RoundedRectangleBorder
     - Avatars, CircleAvatar,
     - AnimatedContainer, Random
+    - Inputs, TextField, InputDecoration, TextEditingController
+    - Locale, GlobalMaterialLocalizations
     Loadings, InfiniteScroll, Pull to refresh, Sliders
 
