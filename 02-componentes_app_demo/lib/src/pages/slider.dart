@@ -20,14 +20,16 @@ class _SliderPageState extends State<SliderPage> {
           actions: <Widget>[AvatarWidget()],
         ),
         body: Container(
-            padding: EdgeInsets.only(top: 50),
-            child: Column(
-              children: <Widget>[
-                _crearSlider(),
-                Text('Tamaño: ${_valorSlider.round()}'),
-                Expanded(child: _crearImagen()),
-              ],
-            )));
+          padding: EdgeInsets.only(top: 50),
+          child: Column(
+            children: <Widget>[
+              _crearSlider(),
+              Text('Tamaño: ${_valorSlider.round()}'),
+              Expanded(child: _crearImagen()),
+            ],
+          )
+        )
+    );
   }
 
   _crearSlider() {
@@ -49,8 +51,9 @@ class _SliderPageState extends State<SliderPage> {
     return FadeInImage(
       width: _valorSlider,
       fit: BoxFit.contain,
-      image: NetworkImage('https://hardwaresfera.com/wp-content/uploads/2020/04/Narciso-Animal-Crossing-New-Horizons-Nintendo-Switch.png' ),
-      placeholder: AssetImage( 'assets/img/jar-loading.gif' ),
+      image: NetworkImage(
+          'https://hardwaresfera.com/wp-content/uploads/2020/04/Narciso-Animal-Crossing-New-Horizons-Nintendo-Switch.png'),
+      placeholder: AssetImage('assets/img/jar-loading.gif'),
     );
   }
 }
