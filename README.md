@@ -20,5 +20,6 @@
     - AnimatedContainer, Random
     - Inputs, TextField, InputDecoration, TextEditingController
     - Locale, GlobalMaterialLocalizations
+    - Dropdown, DropdownMenuItem
     Loadings, InfiniteScroll, Pull to refresh, Sliders
 

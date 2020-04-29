@@ -14,6 +14,9 @@ class _InputPageState extends State<InputPage> {
   String _email = '';
   String _contrasena = '';
   String _fecha = '';
+  String _opcionSeleccionada = 'Volar';
+
+  List _poderes = ['Volar', 'Super Fuerza', 'Trepar', 'Regeneracion'];
 
   TextEditingController _inputFieldDateController = new TextEditingController();
 
@@ -34,6 +37,8 @@ class _InputPageState extends State<InputPage> {
           _crearPassword(),
           Divider(),
           _crearDatepicker(context),
+          Divider(),
+          _crearDropdown(),
           Divider(),
           _crearPersona(),
         ],
@@ -80,6 +85,7 @@ class _InputPageState extends State<InputPage> {
       },
     );
   }
+
   _crearPassword() {
     return TextField(
       obscureText: true,
@@ -99,42 +105,72 @@ class _InputPageState extends State<InputPage> {
     );
   }
 
-  _crearDatepicker( BuildContext context) {
+  _crearDatepicker(BuildContext context) {
     return TextField(
-      controller: _inputFieldDateController,
-      enableInteractiveSelection: false,
-      decoration: InputDecoration(
-        labelText: 'Fecha nacimiento',
-        helperText: 'dd/mm/yyyy',
-        suffixIcon: Icon(Icons.perm_contact_calendar),
-        icon: Icon(Icons.calendar_today),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-      ),
-      onTap: () {
-        FocusScope.of(context).requestFocus(new FocusNode());
+        controller: _inputFieldDateController,
+        enableInteractiveSelection: false,
+        decoration: InputDecoration(
+          labelText: 'Fecha nacimiento',
+          helperText: 'dd/mm/yyyy',
+          suffixIcon: Icon(Icons.perm_contact_calendar),
+          icon: Icon(Icons.calendar_today),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+        ),
+        onTap: () {
+          FocusScope.of(context).requestFocus(new FocusNode());
 
-        _selectDate( context );
-      }
-    );
+          _selectDate(context);
+        });
   }
 
   _crearPersona() {
     return ListTile(
       title: Text('Nombre es: $_nombre'),
       subtitle: Text('Email es: $_email'),
+      trailing: Text(_opcionSeleccionada),
     );
   }
 
-  _selectDate( BuildContext context) async {
-    DateTime picked = await showDatePicker(
-      context: context,
-      initialDate: new DateTime.now(),
-      firstDate: new DateTime(2018),
-      lastDate: new DateTime(2025),
-      locale: Locale('es', 'ES')
-    );
+  List<DropdownMenuItem<String>> _getOpcionesDropdown() {
+    List<DropdownMenuItem<String>> list = new List();
 
-    if( picked != null ) {
+    _poderes.forEach((poder) {
+      list.add(DropdownMenuItem(
+        value: poder,
+        child: Text(poder),
+      ));
+    });
+
+    return list;
+  }
+
+  Widget _crearDropdown() {
+    return Row(children: <Widget>[
+      Icon(Icons.select_all),
+      SizedBox(
+        width: 30,
+      ),
+      DropdownButton(
+        value: _opcionSeleccionada,
+        items: _getOpcionesDropdown(),
+        onChanged: (opt) {
+          setState(() {
+            _opcionSeleccionada = opt;
+          });
+        },
+      ),
+    ]);
+  }
+
+  _selectDate(BuildContext context) async {
+    DateTime picked = await showDatePicker(
+        context: context,
+        initialDate: new DateTime.now(),
+        firstDate: new DateTime(2018),
+        lastDate: new DateTime(2025),
+        locale: Locale('es', 'ES'));
+
+    if (picked != null) {
       setState(() {
         _fecha = picked.toString();
         _inputFieldDateController.text = _fecha;
