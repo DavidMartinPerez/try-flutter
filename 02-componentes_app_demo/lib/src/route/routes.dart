@@ -1,3 +1,4 @@
+import 'package:componentes_app_demo/src/pages/list.dart';
 import 'package:flutter/material.dart';
 
 // import 'package:componentes_app_demo/src/pages/home_temp.dart';
@@ -18,6 +19,7 @@ Map<String, WidgetBuilder> getAplicationRoutes() {
     'animatedContainer': (BuildContext context) => AnimatedContainerPage(),
     'inputs': (BuildContext context) => InputPage(),
     'sliders': (BuildContext context) => SliderPage(),
+    'list'   : (BuildContext context) => ListPage(),
   };
 }
 
